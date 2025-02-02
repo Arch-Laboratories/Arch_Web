@@ -1698,13 +1698,15 @@ body {
 	  font-size: 14px;
   }
   #contact-section .contact .contact-form button {
-	  background-color: #363940;
+	  background-color: #444444;
 	  width: 100%;
 	  height: 40px;
+	  transition: all 1.2 ease;
   }
   #contact-section .contact .contact-form button:hover {
-	  background-color: #43474e ;
+	  background-color: #28a0b8 ;
 	  color: #fff;
+	  transition: all 1.2 ease-in-out;
   }
   #contact-section .contact .form-control {
 	  background-color: rgba(255, 255, 255, 0.06);
