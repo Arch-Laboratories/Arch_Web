@@ -296,6 +296,16 @@ body {
   .is-sticky #header {
 	background: rgba(0, 0, 0, 0.85);
   }
+
+  .page-loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background: #FFF url(../images/page-loader.gif) center center no-repeat;
+}
   
   /*--------------------------------------------------------------
   # Navigation Menu
