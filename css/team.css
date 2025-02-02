@@ -177,9 +177,10 @@ html, body {
   }
   
   .team-img {
-    width: 50%;
-    height: 50%;
-    justify-content: center;
+    width: 100px;
+    height: 100px;
+    /* justify-content: center; */
+    object-fit: cover;
   }
   
   .team-card-container {
