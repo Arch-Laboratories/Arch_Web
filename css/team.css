@@ -31,7 +31,7 @@ html, body {
     z-index: -1;
   }
 
-  .overlay {
+  .overlay2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -199,14 +199,22 @@ html, body {
     }
   }
   
-  section {
+  /* section {
     overflow: auto;
     padding: 50px 80px;
-  }
+  } */
 
   .section1 {
     height: 30%;
     background-color: rgb(87, 87, 87);
+  }
+
+  .section3 {
+    overflow: auto;
+    padding: 50px 80px;
+    overflow: auto; /* Ensures content is scrollable */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
   }
 
   .parallax2, .parallax1 .parallax3, .parallax4 {
@@ -249,7 +257,7 @@ html, body {
     display: flex;
   }
 
-  .container {
+  /* .container {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(0, 0, 0, 0.25);
@@ -263,7 +271,7 @@ html, body {
     justify-content:center;
     text-align: center;
     
-  }
+  } */
   
   .wrapper {
     width: 100%;
@@ -468,6 +476,8 @@ html, body {
     transform: translateZ(0px);
   }
   .card .card-back {
+    top: 0;
+    left: 0;
     position: absolute;
     height: 100%;
     width: 100%;
