@@ -1693,12 +1693,12 @@ ul.social-list li a i {
 	font-size: 14px;
 }
 #contact-section .contact .contact-form button {
-	background-color: #28A0B8;
+	background-color: #444444;
 	width: 100%;
 	height: 40px;
 }
 #contact-section .contact .contact-form button:hover {
-	background-color: #444444 ;
+	background-color: #28A0B8 ;
 	color: #fff;
 }
 #contact-section .contact .form-control {
