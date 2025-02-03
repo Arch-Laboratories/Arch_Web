@@ -899,7 +899,12 @@ body .body {
   overflow: hidden;
   /* background-color: #fff; */
   padding: 50px 0;
-}gt
+}
+/* * {
+	border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+} */
 *:focus { 
 	outline: none !important;
 	box-shadow: none !important;
