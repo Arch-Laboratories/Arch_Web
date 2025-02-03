@@ -368,21 +368,21 @@
                          <div class="col-sm-6">
                                <div class="contact-form">
                                  <h4>Contact Us</h4>
-                                   <form role="form">
-                                       <div class="form-group">
-                                           <input type="text" class="form-control input-lg" placeholder="Your Name" required>
-                                       </div>
-                                       <div class="form-group">
-                                           <input type="email" class="form-control input-lg" placeholder="E-mail" required>
-                                       </div>
-                                       <div class="form-group">
-                                           <input type="text" class="form-control input-lg" placeholder="Subject" required>
-                                       </div>
-                                       <div class="form-group">
-                                           <textarea class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
-                                       </div>
-                                       <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
-                                   </form>
+                                 <form role="form">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control input-lg" placeholder="Your Name" required name="name">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="email" class="form-control input-lg" placeholder="E-mail" required name="email">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="text" class="form-control input-lg" placeholder="Subject" required name="subject">
+                                  </div>
+                                  <div class="form-group">
+                                      <textarea class="form-control input-lg" rows="5" placeholder="Message" required name="message"></textarea>
+                                  </div>
+                                  <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
+                              </form>
                                </div>	
                            </div>
                                                                                
@@ -434,8 +434,39 @@
   <!-- Template Specisifc Custom Javascript File -->
   <script src="js/custom.js"></script>
 
-  <script src="contactform/contactform.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+<script>
+  // Initialize EmailJS with your public key
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("ML2U1HbiEZV20GEtr"); // Replace with your EmailJS Public Key
+  });
+
+  // Handle form submission
+  document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page reload
+
+    // Collect form data
+    const formData = {
+      from_email: "archlabs1@gmail.com", // Constant sender email
+      from_name: document.querySelector('input[name="name"]').value,
+      user_email: document.querySelector('input[name="email"]').value,
+      subject: document.querySelector('input[name="subject"]').value,
+      message: `Sender Email: ${document.querySelector('input[name="email"]').value}\n\n` + 
+               `Message: ${document.querySelector('textarea[name="message"]').value}`
+    };
+
+    // Send email using EmailJS
+    emailjs.send("service_hz6kb2c", "template_7uqz4cb", formData)
+      .then(function (response) {
+        alert("Email sent successfully!");
+        document.querySelector("form").reset(); // Clear the form
+      })
+      .catch(function (error) {
+        alert("Failed to send email. Error: " + JSON.stringify(error));
+      });
+  });
+</script>
 
 </body>
 
